@@ -12,13 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#pragma once
+namespace Magma {
 
-#include "Magma/Types.hxx"             // IWYU pragma: keep
+  void Initialize();
 
-// Core
-#include "Magma/Core/Application.hxx"  // IWYU pragma: keep
-#include "Magma/Core/Logger.hxx"       // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"      // IWYU pragma: keep
-#include "Magma/Core/Window.hxx"       // IWYU pragma: keep
-
+} // namespace Magma

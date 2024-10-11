@@ -12,13 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#pragma once
+#include "Magma/Core/Application.hxx"
 
-#include "Magma/Types.hxx"             // IWYU pragma: keep
+namespace Magma {
 
-// Core
-#include "Magma/Core/Application.hxx"  // IWYU pragma: keep
-#include "Magma/Core/Logger.hxx"       // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"      // IWYU pragma: keep
-#include "Magma/Core/Window.hxx"       // IWYU pragma: keep
+  Application::Application() {
 
+  }
+
+  Application::~Application() {
+
+  }
+
+  void Application::Run() {
+    while (m_Runing) {
+      // TODO: Add delta time
+      OnUpdate(0.0f);
+    }
+  }
+
+} // namespace Magma

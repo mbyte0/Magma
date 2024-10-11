@@ -84,12 +84,6 @@ namespace Magma {
   #define MG_LOG_FATAL(...)    MAGMA_LOG_FATAL_CUSTOM(::Magma::magmaLogger, __VA_ARGS__)
 
 #else
-  // #define LOG_TRACE(...)   ::Magma::clientLogger.Log(Magma::Logger::LogType::Trace,   std::source_location::current(), __VA_ARGS__)
-  // #define LOG_DEBUG(...)   ::Magma::clientLogger.Log(Magma::Logger::LogType::Debug,   std::source_location::current(), __VA_ARGS__)
-  // #define LOG_INFO(...)    ::Magma::clientLogger.Log(Magma::Logger::LogType::Info,    std::source_location::current(), __VA_ARGS__)
-  // #define LOG_WARNING(...) ::Magma::clientLogger.Log(Magma::Logger::LogType::Warning, std::source_location::current(), __VA_ARGS__)
-  // #define LOG_ERROR(...)   ::Magma::clientLogger.Log(Magma::Logger::LogType::Error,   std::source_location::current(), __VA_ARGS__)
-  // #define LOG_FATAL(...)   ::Magma::clientLogger.Log(Magma::Logger::LogType::Fatal,   std::source_location::current(), __VA_ARGS__)
 
   #define LOG_TRACE(...)    MAGMA_LOG_TRACE_CUSTOM(::Magma::clientLogger, __VA_ARGS__)
   #define LOG_DEBUG(...)    MAGMA_LOG_DEBUG_CUSTOM(::Magma::clientLogger, __VA_ARGS__)

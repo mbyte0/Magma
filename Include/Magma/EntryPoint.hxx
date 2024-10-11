@@ -12,13 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#pragma once
+#include "Magma/Types.hxx" // IWYU pragma: keep
+#include "Magma/Core/Application.hxx"
+#include "Magma/Core/Initialize.hxx"
+#include "Magma/Core/Shutdown.hxx"
 
-#include "Magma/Types.hxx"             // IWYU pragma: keep
+extern std::unique_ptr<Magma::Application> CreateApplication();
 
-// Core
-#include "Magma/Core/Application.hxx"  // IWYU pragma: keep
-#include "Magma/Core/Logger.hxx"       // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"      // IWYU pragma: keep
-#include "Magma/Core/Window.hxx"       // IWYU pragma: keep
+#if MAGMA_PLATFORM_LINUX
 
+int main() {
+  Magma::Initialize();
+
+  std::unique_ptr<Magma::Application> application = CreateApplication();
+  application->Run();
+
+  Magma::Shutdown();
+}
+
+#elif MAGMA_PLATFORM_WINDOWS
+
+#error TODO Implement on windows
+// WinMain() ...
+
+#endif

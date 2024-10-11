@@ -28,6 +28,10 @@ message("Building Magma ${MAGMA_VERSION_STRING} (${CMAKE_BUILD_TYPE})")
 add_library(Magma SHARED
   Source/Core/Logger.cxx
   Source/Core/Version.cxx
+  # Source/Core/Window.cxx
+  Source/Core/Application.cxx
+  Source/Core/Initialize.cxx
+  Source/Core/Shutdown.cxx
 )
 
 target_include_directories(Magma
@@ -47,10 +51,11 @@ target_compile_definitions(Magma
     "MAGMA_VERSION_PRE_RELEASE_TAG=\"${MAGMA_VERSION_PRE_RELEASE_TAG}\""
     "MAGMA_VERSION_PRE_RELEASE_VERSION=${MAGMA_VERSION_PRE_RELEASE_VERSION}"
     "MAGMA_VERSION_STRING=\"${MAGMA_VERSION_STRING}\""
-  PRIVATE
     "MAGMA_PLATFORM_${MAGMA_PLATFORM_UPPERCASE}=1"
+  PRIVATE
     "MAGMA_BUILD=1"
 )
+
 
 set(FMT_DOC                         OFF)
 set(FMT_INSTALL                     OFF)
@@ -60,6 +65,17 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON )
 
 add_subdirectory(Libraries/fmt)
 target_link_libraries(Magma fmt::fmt)
+
+
+set(GLFW_BUILD_EXAMPLES             OFF)
+set(GLFW_BUILD_TESTS                OFF)
+set(GLFW_BUILD_DOCS                 OFF)
+set(GLFW_INSTALL                    OFF)
+set(BUILD_SHARED_LIBS               OFF)
+
+# add_subdirectory(Libraries/glfw)
+# target_link_libraries(Magma glfw)
+
 
 # add_subdirectory(Forge)
 add_subdirectory(Sandbox)

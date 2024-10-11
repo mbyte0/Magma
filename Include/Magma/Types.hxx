@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 #pragma once
 
 static_assert(8 * sizeof(float)  == 32);
@@ -26,6 +25,7 @@ static_assert(8 * sizeof(double) == 64);
 #include <vector>
 #include <array>
 #include <functional>
+#include <memory> // IWYU pragma: keep
 
 // #include <glm/glm.hpp>
 

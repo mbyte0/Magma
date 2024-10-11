@@ -14,11 +14,23 @@
 
 #pragma once
 
-#include "Magma/Types.hxx"             // IWYU pragma: keep
+#include "Magma/Types.hxx"
 
-// Core
-#include "Magma/Core/Application.hxx"  // IWYU pragma: keep
-#include "Magma/Core/Logger.hxx"       // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"      // IWYU pragma: keep
-#include "Magma/Core/Window.hxx"       // IWYU pragma: keep
+namespace Magma {
 
+  class Application
+  {
+  public:
+    Application();
+    virtual ~Application();
+
+    virtual void OnUpdate(Float32 delta) = 0;
+
+    void Run();
+
+  private:
+    Bool m_Runing = true;
+
+  };
+
+} // namespace Magma
