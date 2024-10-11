@@ -1,4 +1,4 @@
-# **Please note:** This project is currently in the early stages of development, so a bunch of stuff hasn't yet been implemented. 
+# **Please note:** This project is currently in the early stages of it's development, so a bunch of stuff hasn't yet been implemented. 
 
 # Magma
 Magma is a 2D/3D Vulkan game engine for Linux/Windows written in C++.  
