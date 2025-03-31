@@ -1,0 +1,39 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.so
+*.dll
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# clangd
+.clangd/
+compile_commands.json
+.cache/
+
+# Ninja
+build.ninja
+rules.ninja
+.ninja_log
+.ninja_deps
+
+# Build
+build/
+bin/
+
+TODO.txt

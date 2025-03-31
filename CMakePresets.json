@@ -1,0 +1,51 @@
+{
+  "version": 8,
+  "configurePresets": [
+
+    {
+      "name": "WindowsDebug",
+      "displayName": "Windows (Debug)",
+      "generator": "Ninja",
+      "binaryDir": "build/debug/",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "TRUE",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "WindowsRelease",
+      "displayName": "Windows (Release)",
+      "generator": "Ninja",
+      "binaryDir": "build/release/",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "FALSE",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "LinuxDebug",
+      "displayName": "Linux (Debug)",
+      "generator": "Ninja",
+      "binaryDir": "build/debug/",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "TRUE",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "LinuxRelease",
+      "displayName": "Linux (Release)",
+      "generator": "Ninja",
+      "binaryDir": "build/release/",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "FALSE",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    }
+
+  ]
+}
