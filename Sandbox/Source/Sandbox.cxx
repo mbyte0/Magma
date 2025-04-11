@@ -1,18 +1,9 @@
 #include <Magma.hxx>
 
-#include <iostream>
-
-
 int main() {
-  Magma::TestFunc();
+  Magma::Initialize();
 
-  Magma::TestClass a(456);
-  std::cout << "Number first value: " << a.GetNumber() << std::endl;
-  a.SetNumber(987);
-  std::cout << "Number: " << a.GetNumber() << std::endl;
+  LOG_INFO("Added {1} to {0}", "Magma", "logger");
 
-  for (Size i = 0; i <= 100; i++) {
-    std::cout << "i is: " << i << std::endl;
-    a.SetNumber(i);
-  }
+  Magma::Shutdown();
 }

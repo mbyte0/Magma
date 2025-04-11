@@ -12,12 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#pragma once
+#include "Magma/Debug/Logger.hxx"
 
-#include "Magma/Types.hxx"           // IWYU pragma: keep
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
 
-#include "Magma/Core/Initialize.hxx" // IWYU pragma: keep
-#include "Magma/Core/Shutdown.hxx"   // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"    // IWYU pragma: keep
+namespace Magma {
 
-#include "Magma/Debug/Logger.hxx"    // IWYU pragma: keep
+  std::shared_ptr<spdlog::logger> Logger::s_EngineLogger;
+  std::shared_ptr<spdlog::logger> Logger::s_AppLogger;
+
+  void Logger::Initialize() {
+    spdlog::set_level(spdlog::level::trace);
+    spdlog::set_pattern("%^[%Y-%m-%d %T.%e] [%n] [%l] %s:%# (%!):%$ %v");
+
+    s_EngineLogger = spdlog::stdout_color_mt("Magma");
+    s_AppLogger = spdlog::stdout_color_mt("Application");
+
+  }
+
+  void Logger::Shutdown() {
+    // TODO
+  }
+
+} // namespace Magma

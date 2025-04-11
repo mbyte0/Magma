@@ -14,10 +14,10 @@
 
 #pragma once
 
-#include "Magma/Types.hxx"           // IWYU pragma: keep
+#include "Magma/Types.hxx"
 
-#include "Magma/Core/Initialize.hxx" // IWYU pragma: keep
-#include "Magma/Core/Shutdown.hxx"   // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"    // IWYU pragma: keep
+namespace Magma {
 
-#include "Magma/Debug/Logger.hxx"    // IWYU pragma: keep
+  void MAGMA_API Initialize();
+
+} // namespace Magma

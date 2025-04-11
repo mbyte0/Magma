@@ -12,12 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#pragma once
+#include "Magma/Core/Shutdown.hxx"
 
-#include "Magma/Types.hxx"           // IWYU pragma: keep
+#include "Magma/Debug/Logger.hxx"
 
-#include "Magma/Core/Initialize.hxx" // IWYU pragma: keep
-#include "Magma/Core/Shutdown.hxx"   // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"    // IWYU pragma: keep
+namespace Magma {
 
-#include "Magma/Debug/Logger.hxx"    // IWYU pragma: keep
+  void Shutdown() {
+    Logger::Shutdown();
+  }
+
+} // namespace Magma

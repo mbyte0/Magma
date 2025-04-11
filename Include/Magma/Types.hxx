@@ -20,14 +20,14 @@ static_assert(8 * sizeof(double) == 64);
 #include <inttypes.h>
 #include <string>
 #include <string_view>
-#include <map>
-#include <unordered_map>
-#include <vector>
+#include <map>              // IWYU pragma: keep
+#include <unordered_map>    // IWYU pragma: keep
+#include <vector>           // IWYU pragma: keep
 #include <array>
 #include <functional>
-#include <memory> // IWYU pragma: keep
+#include <memory>           // IWYU pragma: keep
 
-// #include <glm/glm.hpp>
+#include <glm/glm.hpp>
 
 using Int8    = int8_t;
 using Int16   = int16_t;
@@ -66,7 +66,7 @@ using Array = std::array<Type, Size>;
 template <typename T>
 using Function = std::function<T>;
 
-// namespace Math = glm;
+namespace Math = glm;
 
 #if MAGMA_PLATFORM_WINDOWS && MAGMA_BUILD
     #define MAGMA_API __declspec(dllexport)

@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#pragma once
+#include "Magma/Core/Version.hxx"
 
-#include "Magma/Types.hxx"           // IWYU pragma: keep
+namespace Magma {
 
-#include "Magma/Core/Initialize.hxx" // IWYU pragma: keep
-#include "Magma/Core/Shutdown.hxx"   // IWYU pragma: keep
-#include "Magma/Core/Version.hxx"    // IWYU pragma: keep
+  CString GetVersionString() {
+    return MAGMA_VERSION_STRING;
+  }
 
-#include "Magma/Debug/Logger.hxx"    // IWYU pragma: keep
+} // namespace Magma
